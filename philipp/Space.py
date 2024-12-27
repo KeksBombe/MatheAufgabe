@@ -2,6 +2,7 @@ import yaml
 from itertools import combinations
 from vpython import vector, mag, proj, box, color
 import Ball
+import os
 
 
 class Space():
@@ -11,6 +12,8 @@ class Space():
         self.height = height
         self.thickness = thickness
         self.spheres= set()
+
+        print(os.getcwd())
 
         with open(file, 'r') as f:
             data = yaml.safe_load(f)
