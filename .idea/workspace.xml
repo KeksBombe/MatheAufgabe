@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee444204-86ce-4882-a4f2-a86e1bd7fa72" name="Changes" comment="Slider GUI">
+    <list default="true" id="ee444204-86ce-4882-a4f2-a86e1bd7fa72" name="Changes" comment="Elastizität">
+      <change afterPath="$PROJECT_DIR$/philipp/Space.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/philipp/Kugeln.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/philipp/Kugeln.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/philipp/Simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/philipp/Simulation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/philipp/Space.py" beforeDir="false" afterPath="$PROJECT_DIR$/philipp/Space.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +133,7 @@
       <option name="presentableId" value="Default" />
       <updated>1734560423702</updated>
       <workItem from="1735313475109" duration="2729000" />
-      <workItem from="1736265955825" duration="3814000" />
+      <workItem from="1736265955825" duration="9329000" />
     </task>
     <task id="LOCAL-00001" summary="Zwischenstand">
       <option name="closed" value="true" />
@@ -158,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736266201571</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Elastizität">
+      <option name="closed" value="true" />
+      <created>1736269807495</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736269807495</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,10 +177,11 @@
     <MESSAGE value="Zwischenstand" />
     <MESSAGE value="Zwischenstand 2" />
     <MESSAGE value="Slider GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Slider GUI" />
+    <MESSAGE value="Elastizität" />
+    <option name="LAST_COMMIT_MESSAGE" value="Elastizität" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MatheProjekt$SphereSimulation.coverage" NAME="SphereSimulation Coverage Results" MODIFIED="1736269617459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/MatheProjekt$SphereSimulation.coverage" NAME="SphereSimulation Coverage Results" MODIFIED="1736283041152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/MatheProjekt$Simulation.coverage" NAME="Simulation Coverage Results" MODIFIED="1735314856055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/philipp" />
     <SUITE FILE_PATH="coverage/GithubMatheProjekt$Simulation.coverage" NAME="Simulation Coverage Results" MODIFIED="1735314764416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/philipp" />
     <SUITE FILE_PATH="coverage/MatheProjekt$main.coverage" NAME="main Coverage Results" MODIFIED="1735316024663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
