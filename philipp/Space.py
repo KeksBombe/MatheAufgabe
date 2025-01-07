@@ -36,15 +36,23 @@ class Space():
         wallT = box(pos=vector(0, self.height/2, 0), size=vector(self.width - self.thickness, thickness, self.depth - self.thickness), color=color.blue)
         wallBK = box(pos=vector(0, 0, -self.depth/2), size=vector(self.width - self.thickness, self.height - self.thickness, thickness), color=color.gray(0.7))
 
-    def simulateStep(self, dt):
+    def simulateStep(self, dt, elasticity):
+        self.collisionDetection(dt, elasticity)
+        self.zeitschritt(dt)
+
+
+
+    def collisionDetection(self, dt, elasticity):
         teilmengen = list(combinations(self.spheres, 2))
+        ball1 = None
+        ball2 = None
         #Alle Teilmengen der Mächtigkeit 2
         for pair in teilmengen:
             ball1 = pair[0]
             ball2 = pair[1]
-            pos1 = ball1.sphere.pos = ball1.sphere.pos + ball1.velocity * dt
+            pos1 = ball1.sphere.pos + ball1.velocity * dt
             radius1 = ball1.sphere.radius
-            pos2 = ball2.sphere.pos = ball2.sphere.pos + ball2.velocity * dt
+            pos2 = ball2.sphere.pos + ball2.velocity * dt
             radius2 = ball2.sphere.radius
             dif = pos1 - pos2
             if mag(dif) < (radius2 + radius1):
@@ -58,13 +66,22 @@ class Space():
                 v1StrichCollision = (m1 * v1Collision + m2 * (2 * v2Collision - v1Collision)) / (m1 + m2)
                 v2StrichCollision = (m2 * v2Collision + m1 * (2 * v1Collision - v2Collision)) / (m1 + m2)
 
+                v1StrichCollision = v1StrichCollision * elasticity
+                v2StrichCollision = v2StrichCollision * elasticity
+
                 ball1.velocity = ball1.velocity - v1Collision + v1StrichCollision
                 ball2.velocity = ball2.velocity - v2Collision + v2StrichCollision
 
         for ball in self.spheres:
-            if not (-self.width / 2  + ball.sphere.radius) < ball.sphere.pos.x < (self.width / 2 - ball.sphere.radius):
-                ball.velocity.x = -ball.velocity.x
-            if not (-self.height / 2 + ball.sphere.radius) < ball.sphere.pos.y < (self.height / 2 - ball.sphere.radius):
-                ball.velocity.y = -ball.velocity.y
-            if not (-self.depth / 2 + ball.sphere.radius) < ball.sphere.pos.z < (self.depth / 2 - ball.sphere.radius):
-                ball.velocity.z = -ball.velocity.z
+            futureposition = ball.sphere.pos + ball.velocity * dt
+            if not (-self.width / 2  + ball.sphere.radius) < futureposition.x < (self.width / 2 - ball.sphere.radius):
+                print(str(ball.velocity.x) + ' before')
+                ball.velocity.x = -ball.velocity.x * elasticity
+                print(str(ball.velocity.x) + ' after')
+            if not (-self.height / 2 + ball.sphere.radius) < futureposition.y < (self.height / 2 - ball.sphere.radius):
+                ball.velocity.y = -ball.velocity.y * elasticity
+            if not (-self.depth / 2 + ball.sphere.radius) < futureposition.z < (self.depth / 2 - ball.sphere.radius):
+                ball.velocity.z = -ball.velocity.z * elasticity
+    def zeitschritt(self, dt):
+        for ball in self.spheres:
+            ball.sphere.pos = ball.sphere.pos + ball.velocity * dt
