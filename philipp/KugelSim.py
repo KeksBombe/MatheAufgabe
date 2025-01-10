@@ -1,5 +1,5 @@
 from vpython import rate, scene, wtext, slider
-from Space import Space
+from philipp.Space import Space
 
 
 class Simulation():
@@ -35,5 +35,3 @@ def Simulate():
     while True:
         rate(sim.rate)
         sim.space.simulateStep(sim.dt, sim.elasticity)
-
-Simulate()
