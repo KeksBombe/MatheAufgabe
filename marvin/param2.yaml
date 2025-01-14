@@ -1,0 +1,11 @@
+beute_wachstumsrate: 0.48
+raeuber_rate: 0.021
+raeuber_todesrate: 0.48
+raeuber_effizienz: 0.0105
+nahrungs_wachstumsrate: 0.4
+nahrungs_verbrauchsrate: 0.00875
+zeit_schritt: 0.005
+anzahl_schritte: 40000
+beute_population: 50
+raeuber_population: 30
+nahrungs_verfuegbarkeit: 100

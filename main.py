@@ -14,7 +14,7 @@ def start_kugel_simulation():
 def start_jaeger_beute_simulation():
     root.quit()
     root.destroy()
-    JaegerBeuteNahrung.run_simulation()
+    JaegerBeuteNahrung.simulation_durchfuehren()
 
 if __name__ == "__main__":
     # Hauptfenster erstellen

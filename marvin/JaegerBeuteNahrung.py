@@ -1,116 +1,91 @@
 import numpy as np
 import yaml
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
 
-def run_simulation():
-    params = read_params('marvin/params.yaml')
 
-    # Extract parameters
-    prey_growth_rate = params['beute_wachstumsrate']
-    predation_rate = params['raeuber_rate']
-    predator_death_rate = params['raeuber_todesrate']
-    predator_efficiency = params['raeuber_effizienz']
-    food_growth_rate = params['nahrungs_wachstumsrate']
-    food_consumption_rate = params['nahrungs_verbrauchsrate']
+def simulation_durchfuehren():
+    parameter = lese_parameter('marvin/param2.yaml')
 
-    # -- Zeitsettings --
-    time_step = params['zeit_schritt']
-    num_steps = params['anzahl_schritte']
+    # Parameter extrahieren
+    beute_wachstumsrate = parameter['beute_wachstumsrate']
+    raeuber_rate = parameter['raeuber_rate']
+    raeuber_todesrate = parameter['raeuber_todesrate']
+    raeuber_effizienz = parameter['raeuber_effizienz']
+    nahrungs_wachstumsrate = parameter['nahrungs_wachstumsrate']
+    nahrungs_verbrauchsrate = parameter['nahrungs_verbrauchsrate']
 
-    # -- Anfangswerte --
-    prey_population = params['beute_population']
-    predator_population = params['raeuber_population']
-    food_availability = params['nahrungs_verfuegbarkeit']
+    zeit_schritt = parameter['zeit_schritt']
+    anzahl_schritte = parameter['anzahl_schritte']
 
-    # -- Listen zur Speicherung --
-    time_values = [0]
-    prey_values = [prey_population]
-    predator_values = [predator_population]
-    food_values = [food_availability]
+    beute_population = parameter['beute_population']
+    raeuber_population = parameter['raeuber_population']
+    nahrungs_verfuegbarkeit = parameter['nahrungs_verfuegbarkeit']
 
-    # -- Definiere Systemgleichungen (dPrey, dPredator, dFood) --
-    def system_odes(state, t):
-        prey, predator, food = state
-        d_pre = (prey_growth_rate * prey
-                 - predation_rate * prey * predator
-                 + food_consumption_rate * prey * food)
-        d_pred = (-predator_death_rate * predator
-                  + predator_efficiency * prey * predator)
-        d_food = (food_growth_rate * food
-                  - food_consumption_rate * prey * food)
-        return np.array([d_pre, d_pred, d_food], dtype=float)
+    zeit_werte = [0]
+    beute_werte = [beute_population]
+    raeuber_werte = [raeuber_population]
+    nahrungs_werte = [nahrungs_verfuegbarkeit]
 
-    # -- 4th Order Runge-Kutta (Kutter) Methode --
-    def runge_kutta_step(func, current_state, t, dt):
-        k1 = func(current_state, t)
-        k2 = func(current_state + 0.5 * dt * k1, t + 0.5 * dt)
-        k3 = func(current_state + 0.5 * dt * k2, t + 0.5 * dt)
-        k4 = func(current_state + dt * k3, t + dt)
-        return current_state + (dt / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
+    def systemgleichungen(zustand, t):
+        beute, raeuber, nahrung = zustand
+        d_beute = (beute_wachstumsrate * beute
+                   - raeuber_rate * beute * raeuber
+                   + nahrungs_verbrauchsrate * beute * nahrung)
+        d_raeuber = (-raeuber_todesrate * raeuber
+                     + raeuber_effizienz * beute * raeuber)
+        d_nahrung = (nahrungs_wachstumsrate * nahrung
+                     - nahrungs_verbrauchsrate * beute * nahrung)
+        return np.array([d_beute, d_raeuber, d_nahrung], dtype=float)
 
-    # -- Vorbereiten der Figure --
+    def runge_kutta_schritt(funktion, aktueller_zustand, t, dt):
+        k1 = funktion(aktueller_zustand, t)
+        k2 = funktion(aktueller_zustand + 0.5 * dt * k1, t + 0.5 * dt)
+        k3 = funktion(aktueller_zustand + 0.5 * dt * k2, t + 0.5 * dt)
+        k4 = funktion(aktueller_zustand + dt * k3, t + dt)
+        return aktueller_zustand + (dt / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
+
+    for schritt in range(anzahl_schritte):
+        aktueller_zustand = np.array([beute_population, raeuber_population, nahrungs_verfuegbarkeit])
+        naechster_zustand = runge_kutta_schritt(systemgleichungen, aktueller_zustand, schritt * zeit_schritt,
+                                                zeit_schritt)
+
+        beute_population, raeuber_population, nahrungs_verfuegbarkeit = naechster_zustand
+
+        beute_population = max(0, beute_population)
+        raeuber_population = max(0, raeuber_population)
+        nahrungs_verfuegbarkeit = max(0, nahrungs_verfuegbarkeit)
+
+        zeit_werte.append(zeit_werte[-1] + zeit_schritt)
+        beute_werte.append(beute_population)
+        raeuber_werte.append(raeuber_population)
+        nahrungs_werte.append(nahrungs_verfuegbarkeit)
+
+    beute_mittel = np.mean(beute_werte)
+    raeuber_mittel = np.mean(raeuber_werte)
+    nahrungs_mittel = np.mean(nahrungs_werte)
+
     fig, ax = plt.subplots(figsize=(12, 6))
-    line_prey, = ax.plot([], [], label="Beutetiere (Prey)", color="blue")
-    line_predator, = ax.plot([], [], label="Raeuber (Predators)", color="red")
-    line_food, = ax.plot([], [], label="Nahrung (Food)", color="green")
+    ax.plot(zeit_werte, beute_werte, label="Beutetiere", color="blue")
+    ax.plot(zeit_werte, raeuber_werte, label="Räuber", color="red")
+    ax.plot(zeit_werte, nahrungs_werte, label="Nahrung", color="green")
 
-    # -- Update-Funktion fuer das Animation-Framework --
-    def update(frame):
-        nonlocal prey_population, predator_population, food_availability
+    ax.axhline(beute_mittel, color="blue", linestyle="--", label="Beute Mittelwert")
+    ax.axhline(raeuber_mittel, color="red", linestyle="--", label="Räuber Mittelwert")
+    ax.axhline(nahrungs_mittel, color="green", linestyle="--", label="Nahrung Mittelwert")
 
-        # Runge-Kutta Schritt durchfuehren
-        current_state = np.array([prey_population, predator_population, food_availability])
-        next_state = runge_kutta_step(system_odes, current_state, frame * time_step, time_step)
-
-        # aktualisieren
-        prey_population, predator_population, food_availability = next_state
-
-        prey_population = max(0, prey_population)
-        predator_population = max(0, predator_population)
-        food_availability = max(0, food_availability)
-
-        time_values.append(time_values[-1] + time_step)
-        prey_values.append(prey_population)
-        predator_values.append(predator_population)
-        food_values.append(food_availability)
-
-        # Daten anpassen
-        line_prey.set_data(time_values, prey_values)
-        line_predator.set_data(time_values, predator_values)
-        line_food.set_data(time_values, food_values)
-
-        # Hier wird das neu skaliert:
-        ax.relim()
-        ax.autoscale_view()
-
-        return line_prey, line_predator, line_food
-
-    # -- Legend und Titel --
     ax.set_xlabel("Zeit")
     ax.set_ylabel("Population / Menge")
-    ax.set_title("Korrigiertes Jaeger-Beute-System mit Nahrung (Runge-Kutta Live)")
+    ax.set_title("Jäger-Beute-System mit Nahrung")
     ax.legend()
-
-    # -- Erstellen der Animation --
-    # Wichtig: blit=False, damit die Achsen sauber updaten können!
-    ani = animation.FuncAnimation(fig, update, frames=num_steps,
-                                  interval=1, blit=False, repeat=False)
 
     plt.show()
 
-    # -- Mittelwerte nach Abschluss (fuer Interessierte) --
-    mean_prey_population = np.mean(prey_values)
-    mean_predator_population = np.mean(predator_values)
-    mean_food_availability = np.mean(food_values)
-    print("Durchschnitt Beute (Prey):", mean_prey_population)
-    print("Durchschnitt Raeuber (Predators):", mean_predator_population)
-    print("Durchschnitt Nahrung (Food):", mean_food_availability)
 
-def read_params(yaml_file):
-    with open(yaml_file, 'r') as file:
-        params = yaml.safe_load(file)
-    return params
+def lese_parameter(yaml_datei):
+    with open(yaml_datei, 'r') as datei:
+        parameter = yaml.safe_load(datei)
+    return parameter
+
 
 if __name__ == "__main__":
-    run_simulation()
+    simulation_durchfuehren()

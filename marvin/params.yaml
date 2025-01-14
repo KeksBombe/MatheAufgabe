@@ -5,7 +5,7 @@ raeuber_effizienz: 0.01
 nahrungs_wachstumsrate: 0.41
 nahrungs_verbrauchsrate: 0.009
 zeit_schritt: 0.005
-anzahl_schritte: 4000
+anzahl_schritte: 40000
 beute_population: 50
 raeuber_population: 30
 nahrungs_verfuegbarkeit: 100
