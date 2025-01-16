@@ -7,7 +7,7 @@ from tkinter import messagebox
 def start_kugel_simulation():
     root.quit()
     root.destroy()
-    KugelSim.Simulate()
+    KugelSim.start()
     
 
 
