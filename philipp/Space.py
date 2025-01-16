@@ -119,13 +119,28 @@ class Space():
 
     def collisionWithBorder(self,dt, elasticity):
         for ball in self.spheres:
-            futureposition = ball.sphere.pos + ball.velocity * dt
-            if not (-self.width / 2  + ball.sphere.radius) < futureposition.x < (self.width / 2 - ball.sphere.radius):
-                ball.velocity.x = -ball.velocity.x * elasticity
-            if not (-self.height / 2 + ball.sphere.radius) < futureposition.y < (self.height / 2 - ball.sphere.radius):
-                ball.velocity.y = -ball.velocity.y * elasticity
-            if not (-self.depth / 2 + ball.sphere.radius) < futureposition.z < (self.depth / 2 - ball.sphere.radius):
-                ball.velocity.z = -ball.velocity.z * elasticity
+            if not (-self.width / 2 + ball.sphere.radius) < ball.sphere.pos.x:
+                if not ball.velocity.x > 0:
+                    ball.velocity.x = -ball.velocity.x * elasticity
+            if not (self.width / 2 - ball.sphere.radius) > ball.sphere.pos.x:
+                if not ball.velocity.x < 0:
+                    ball.velocity.x = -ball.velocity.x * elasticity
+
+            if not (-self.height / 2 + ball.sphere.radius) < ball.sphere.pos.y:
+                if not ball.velocity.y > 0:
+                    ball.velocity.y = -ball.velocity.y * elasticity
+            if not (self.height / 2 - ball.sphere.radius) > ball.sphere.pos.y:
+                if not ball.velocity.y < 0:
+                    ball.velocity.y = -ball.velocity.y * elasticity
+
+            if not (-self.depth / 2 + ball.sphere.radius) < ball.sphere.pos.z:
+                if not ball.velocity.z > 0:
+                    ball.velocity.z = -ball.velocity.z * elasticity
+            if not (self.depth / 2 - ball.sphere.radius) > ball.sphere.pos.z:
+                if not ball.velocity.z < 0:
+                    ball.velocity.z = -ball.velocity.z * elasticity
+
+
 
     def zeitschritt(self, dt):
         for ball in self.spheres:

@@ -5,7 +5,7 @@ spheres:
       range: [0.1, 6]
     position: [1.0, -2.0, 3.0]
     color: [1, 0, 0]
-    velocity: [1.0, 3.0, 0.0]
+    velocity: [10000.0, 3.0, 0.0]
     mass: 100.0
   ball2:
     radius:
