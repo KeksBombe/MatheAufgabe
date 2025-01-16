@@ -73,16 +73,14 @@ class Space():
 
 
     def simulateStep(self, dt, elasticity):
-        self.collisionDetection(dt, elasticity)
+        spherecollisions = self.collisionDetection(dt, elasticity)
+        self.collisionHandling(dt, elasticity, spherecollisions)
         self.collisionWithBorder(dt, elasticity)
         self.zeitschritt(dt)
 
-
-
     def collisionDetection(self, dt, elasticity):
         teilmengen = list(combinations(self.spheres, 2))
-        ball1 = None
-        ball2 = None
+        collisions = list()
         #Alle Teilmengen der Mächtigkeit 2
         for pair in teilmengen:
             ball1 = pair[0]
@@ -93,21 +91,31 @@ class Space():
             radius2 = ball2.sphere.radius
             dif = pos1 - pos2
             if mag(dif) < (radius2 + radius1):
-                n = dif
-                v1Collision = proj(ball1.velocity, n)
-                v2Collision = proj(ball2.velocity, n)
+                collisions.append(pair)
+        return collisions
 
-                m1 = ball1.mass
-                m2 = ball2.mass
+    def collisionHandling(self, dt, elasticity, sphereCollisions):
+        for pair in sphereCollisions:
+            ball1 = pair[0]
+            ball2 = pair[1]
+            pos1 = ball1.sphere.pos + ball1.velocity * dt
+            pos2 = ball2.sphere.pos + ball2.velocity * dt
+            dif = pos1 - pos2
+            n = dif
+            v1Collision = proj(ball1.velocity, n)
+            v2Collision = proj(ball2.velocity, n)
 
-                v1StrichCollision = (m1 * v1Collision + m2 * (2 * v2Collision - v1Collision)) / (m1 + m2)
-                v2StrichCollision = (m2 * v2Collision + m1 * (2 * v1Collision - v2Collision)) / (m1 + m2)
+            m1 = ball1.mass
+            m2 = ball2.mass
 
-                v1StrichCollision = v1StrichCollision * elasticity
-                v2StrichCollision = v2StrichCollision * elasticity
+            v1StrichCollision = (m1 * v1Collision + m2 * (2 * v2Collision - v1Collision)) / (m1 + m2)
+            v2StrichCollision = (m2 * v2Collision + m1 * (2 * v1Collision - v2Collision)) / (m1 + m2)
 
-                ball1.velocity = ball1.velocity - v1Collision + v1StrichCollision
-                ball2.velocity = ball2.velocity - v2Collision + v2StrichCollision
+            v1StrichCollision = v1StrichCollision * elasticity
+            v2StrichCollision = v2StrichCollision * elasticity
+
+            ball1.velocity = ball1.velocity - v1Collision + v1StrichCollision
+            ball2.velocity = ball2.velocity - v2Collision + v2StrichCollision
 
     def collisionWithBorder(self,dt, elasticity):
         for ball in self.spheres:
