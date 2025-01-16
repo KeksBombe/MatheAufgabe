@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee444204-86ce-4882-a4f2-a86e1bd7fa72" name="Changes" comment="minor tweaks">
-      <change afterPath="$PROJECT_DIR$/philipp/Constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="ee444204-86ce-4882-a4f2-a86e1bd7fa72" name="Changes" comment="outsourced gui/view&#10;established a constant.py file">
       <change beforePath="$PROJECT_DIR$/philipp/KugelSim.py" beforeDir="false" afterPath="$PROJECT_DIR$/philipp/KugelSim.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/philipp/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/philipp/view.py" afterDir="false" />
     </list>
@@ -148,7 +145,7 @@
       <workItem from="1736446349397" duration="6611000" />
       <workItem from="1736520437923" duration="5303000" />
       <workItem from="1737015341079" duration="1712000" />
-      <workItem from="1737048557488" duration="2774000" />
+      <workItem from="1737048557488" duration="3134000" />
     </task>
     <task id="LOCAL-00001" summary="Zwischenstand">
       <option name="closed" value="true" />
@@ -198,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737049647381</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="outsourced gui/view&#10;established a constant.py file">
+      <option name="closed" value="true" />
+      <created>1737051453352</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1737051453352</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,13 +216,14 @@
     <MESSAGE value="Elastizität" />
     <MESSAGE value="Space config and logging" />
     <MESSAGE value="minor tweaks" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor tweaks" />
+    <MESSAGE value="outsourced gui/view&#10;established a constant.py file" />
+    <option name="LAST_COMMIT_MESSAGE" value="outsourced gui/view&#10;established a constant.py file" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MatheProjekt$SphereSimulation.coverage" NAME="SphereSimulation Coverage Results" MODIFIED="1737050353497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/MatheProjekt$Simulation.coverage" NAME="Simulation Coverage Results" MODIFIED="1735314856055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/philipp" />
     <SUITE FILE_PATH="coverage/MatheProjekt$temp.coverage" NAME="temp Coverage Results" MODIFIED="1737015769568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/philipp" />
     <SUITE FILE_PATH="coverage/GithubMatheProjekt$Simulation.coverage" NAME="Simulation Coverage Results" MODIFIED="1735314764416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/philipp" />
-    <SUITE FILE_PATH="coverage/MatheProjekt$main.coverage" NAME="main Coverage Results" MODIFIED="1737051359010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MatheProjekt$main.coverage" NAME="main Coverage Results" MODIFIED="1737051721688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

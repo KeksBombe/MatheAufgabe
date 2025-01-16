@@ -11,10 +11,12 @@ class Simulation():
         self.dt = dt
         self.space = space
         self.elasticity = elasticity
+        self.paused = False
     def Simulate(self):
         while True:
-            rate(self.rate)
-            self.space.simulateStep(self.dt, self.elasticity)
+            if not self.paused:
+                rate(self.rate)
+                self.space.simulateStep(self.dt, self.elasticity)
 
 def start():
     sim = Simulation()
