@@ -3,7 +3,7 @@ from logging import getLogger
 import yaml
 from itertools import combinations
 from vpython import vector, mag, proj, box, color
-import philipp.Ball as Ball
+import Ball as Ball
 import os
 import logging
 
