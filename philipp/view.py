@@ -1,4 +1,5 @@
-from vpython import scene, slider, wtext, button
+import yaml
+from vpython import scene, slider, wtext, button, box, vector, color
 
 from philipp.Constants import INITIAL_SIM_RATE, INITIAL_ELASTICITY, MAX_SIM_RATE, MIN_SIM_RATE, RATE_STEP_SLIDER, \
     MAX_ELASTICITY, MIN_ELASTICITY, ELASTICITY_STEP_SLIDER
@@ -28,6 +29,32 @@ class View():
             self.vt.text = '{:1.2f}'.format(event.value)
         if event.id == 'pause':
             self.Simulation.paused = not self.Simulation.paused
+
+def makeBordersVisual(file, height, width, depth):
+    with open(file, 'r') as space:
+        spaceData = yaml.safe_load(space)
+    borderSection = spaceData['space']['border']['thickness']
+    thickness = borderSection['value']
+    if not (borderSection['range'][0] < thickness < borderSection['range'][1]):
+        thickness = max(thickness, borderSection['range'][0])
+        thickness = min(thickness, borderSection['range'][1])
+
+    if spaceData['space']['border']['visable']:
+        wallR = box(pos=vector(width / 2, 0, 0),
+                    size=vector(thickness, height - thickness, depth + thickness),
+                    color=color.red)
+        wallL = box(pos=vector(-width / 2, 0, 0),
+                    size=vector(thickness, height - thickness, depth + thickness),
+                    color=color.red)
+        wallB = box(pos=vector(0, -height / 2, 0),
+                    size=vector(width + thickness, thickness, depth + thickness),
+                    color=color.blue)
+        wallT = box(pos=vector(0, height / 2, 0),
+                    size=vector(width - thickness, thickness, depth - thickness),
+                    color=color.blue)
+        wallBK = box(pos=vector(0, 0, -depth / 2),
+                     size=vector(width - thickness, height - thickness, thickness),
+                     color=color.gray(0.7))
 
 
 
