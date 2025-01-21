@@ -14,14 +14,7 @@ pip install -r requirements.txt
 
 Starten Sie die Anwendung mit:
 
-python main.py
-
-Ein Fenster wird geöffnet, in dem Sie zwischen den beiden Simulationen wählen können.
-
-### Kugelkollisionssimulation
-
-Diese Simulation zeigt die Kollision von Kugeln.
-
-### Jäger-Beute-System mit Nahrung
-
-Diese Simulation zeigt die Dynamik eines Jäger-Beute-Systems unter Berücksichtigung der Nahrungsverfügbarkeit.
+python philipp/KugelSim.py
+oder
+python marvin/JaegerBeuteNahrung.py, für die Visualisierung der Parameter
+python marvin/JaegerBeuteNahrung.py, für die optimierung der Parameter
