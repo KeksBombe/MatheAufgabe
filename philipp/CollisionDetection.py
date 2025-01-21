@@ -86,7 +86,6 @@ def handleSphereBoxCollision(collisions, dt):
         timedelta = positionSphereOnCollisionPointWithCuboid(dt, ball, box)
         normalVec = computeCollisionNormalVector(ball, box)
         changeVelocityVectorWithCollisionNormal(ball, normalVec)
-        #TODO ball.sphere.pos = ball.sphere.pos + timedelta*ball.velocity
 
 
 

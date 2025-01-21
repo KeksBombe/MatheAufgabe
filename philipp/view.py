@@ -4,6 +4,7 @@ from vpython import scene, slider, wtext, button, box, vector, color
 from philipp.Constants import INITIAL_SIM_RATE, INITIAL_ELASTICITY, MAX_SIM_RATE, MIN_SIM_RATE, RATE_STEP_SLIDER, \
     MAX_ELASTICITY, MIN_ELASTICITY, ELASTICITY_STEP_SLIDER
 
+OPACITY=0.1
 
 class View():
     def __init__(self, Simulation):
@@ -12,6 +13,7 @@ class View():
         # Sliders and Labels
         scene.title = 'Simulation'
         scene.caption = 'Simulation Speed:'
+        scene.autoscale = False
         speedSlider = slider(bind=self.handleEvent, max=MAX_SIM_RATE, min=MIN_SIM_RATE, value=INITIAL_SIM_RATE, id='simSpeed', step=RATE_STEP_SLIDER)
         self.wt = wtext(text='{:d}'.format(speedSlider.value) + ' Simulation Steps per Second')
         scene.append_to_caption('\nElasticity factor:   ')
@@ -42,19 +44,19 @@ def makeBordersVisual(file, height, width, depth):
     if spaceData['space']['border']['visable']:
         wallR = box(pos=vector(width / 2, 0, 0),
                     size=vector(thickness, height - thickness, depth + thickness),
-                    color=color.red)
+                    color=color.red, opacity=OPACITY)
         wallL = box(pos=vector(-width / 2, 0, 0),
                     size=vector(thickness, height - thickness, depth + thickness),
-                    color=color.red)
+                    color=color.red,opacity=OPACITY)
         wallB = box(pos=vector(0, -height / 2, 0),
                     size=vector(width + thickness, thickness, depth + thickness),
-                    color=color.blue)
+                    color=color.blue, opacity=OPACITY)
         wallT = box(pos=vector(0, height / 2, 0),
                     size=vector(width - thickness, thickness, depth - thickness),
-                    color=color.blue)
+                    color=color.blue, opacity=OPACITY)
         wallBK = box(pos=vector(0, 0, -depth / 2),
                      size=vector(width - thickness, height - thickness, thickness),
-                     color=color.gray(0.7))
+                     color=color.gray(0.7), opacity=OPACITY)
 
 
 

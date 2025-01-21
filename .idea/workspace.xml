@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee444204-86ce-4882-a4f2-a86e1bd7fa72" name="Changes" comment="pause button">
+    <list default="true" id="ee444204-86ce-4882-a4f2-a86e1bd7fa72" name="Changes" comment="Yaml Parser for reading the configuration.&#10;CollisionDetection and Handling for Cuboid Sphere Collisions">
+      <change afterPath="$PROJECT_DIR$/philipp/Visualisation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/philipp/CollisionDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/philipp/CollisionDetection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/philipp/Constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/philipp/Constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/philipp/KugelSim.py" beforeDir="false" afterPath="$PROJECT_DIR$/philipp/KugelSim.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/philipp/Kugeln.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/philipp/Kugeln.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/philipp/Space.py" beforeDir="false" afterPath="$PROJECT_DIR$/philipp/Space.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/philipp/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/philipp/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation.log" beforeDir="false" afterPath="$PROJECT_DIR$/simulation.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +39,9 @@
     &quot;accountId&quot;: &quot;62aa51b1-152a-430e-8359-1d8a141201e6&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -50,9 +54,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Simulation.executor": "Run",
+    "Python.Space.executor": "Run",
     "Python.SphereSimulation.executor": "Run",
+    "Python.Temp.executor": "Run",
+    "Python.Visualisation.executor": "Run",
     "Python.main.executor": "Run",
     "Python.temp.executor": "Run",
+    "Python.test.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -148,7 +156,12 @@
       <workItem from="1736446349397" duration="6611000" />
       <workItem from="1736520437923" duration="5303000" />
       <workItem from="1737015341079" duration="1712000" />
-      <workItem from="1737048557488" duration="5346000" />
+      <workItem from="1737048557488" duration="12363000" />
+      <workItem from="1737116910908" duration="18729000" />
+      <workItem from="1737223225918" duration="1224000" />
+      <workItem from="1737283413804" duration="18507000" />
+      <workItem from="1737362259957" duration="579000" />
+      <workItem from="1737448031434" duration="16533000" />
     </task>
     <task id="LOCAL-00001" summary="Zwischenstand">
       <option name="closed" value="true" />
@@ -214,7 +227,31 @@
       <option name="project" value="LOCAL" />
       <updated>1737051986661</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Upgraded collision with border.&#10;FIX: not naively multipliing velocity vector in x,y or z with -1.">
+      <option name="closed" value="true" />
+      <created>1737054182862</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1737054182862</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Outsourcing Functionality from space class to dedicated collision and View classes/files.">
+      <option name="closed" value="true" />
+      <created>1737299466307</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1737299466308</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Yaml Parser for reading the configuration.&#10;CollisionDetection and Handling for Cuboid Sphere Collisions">
+      <option name="closed" value="true" />
+      <created>1737481861893</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1737481861893</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,13 +266,20 @@
     <MESSAGE value="minor tweaks" />
     <MESSAGE value="outsourced gui/view&#10;established a constant.py file" />
     <MESSAGE value="pause button" />
-    <option name="LAST_COMMIT_MESSAGE" value="pause button" />
+    <MESSAGE value="Upgraded collision with border.&#10;FIX: not naively multipliing velocity vector in x,y or z with -1." />
+    <MESSAGE value="Outsourcing Functionality from space class to dedicated collision and View classes/files." />
+    <MESSAGE value="Yaml Parser for reading the configuration.&#10;CollisionDetection and Handling for Cuboid Sphere Collisions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Yaml Parser for reading the configuration.&#10;CollisionDetection and Handling for Cuboid Sphere Collisions" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MatheProjekt$SphereSimulation.coverage" NAME="SphereSimulation Coverage Results" MODIFIED="1737053950617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/MatheProjekt$SphereSimulation.coverage" NAME="SphereSimulation Coverage Results" MODIFIED="1737481922673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/MatheProjekt$test.coverage" NAME="test Coverage Results" MODIFIED="1737467785965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/philipp" />
     <SUITE FILE_PATH="coverage/MatheProjekt$Simulation.coverage" NAME="Simulation Coverage Results" MODIFIED="1735314856055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/philipp" />
     <SUITE FILE_PATH="coverage/MatheProjekt$temp.coverage" NAME="temp Coverage Results" MODIFIED="1737015769568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/philipp" />
+    <SUITE FILE_PATH="coverage/MatheProjekt$Temp.coverage" NAME="Temp Coverage Results" MODIFIED="1737468110635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/philipp" />
     <SUITE FILE_PATH="coverage/GithubMatheProjekt$Simulation.coverage" NAME="Simulation Coverage Results" MODIFIED="1735314764416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/philipp" />
+    <SUITE FILE_PATH="coverage/MatheProjekt$Visualisation.coverage" NAME="Visualisation Coverage Results" MODIFIED="1737467807373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/philipp" />
     <SUITE FILE_PATH="coverage/MatheProjekt$main.coverage" NAME="main Coverage Results" MODIFIED="1737052988788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MatheProjekt$Space.coverage" NAME="Space Coverage Results" MODIFIED="1737468376348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/philipp" />
   </component>
 </project>
