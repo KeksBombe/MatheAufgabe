@@ -79,13 +79,13 @@ def detectSphereBoxCollision(ballposition, ballradius, box):
     # Wenn der Radius der Kugel größer ist als der Betrag des Distanzvektors, kollidiert die Kugel
     return ballradius > distanceVector.mag
 
-def handleSphereBoxCollision(collisions, dt):
+def handleSphereBoxCollision(collisions, dt, elasticity):
     for pair in collisions:
         ball = pair[0]
         box = pair[1]
         timedelta = positionSphereOnCollisionPointWithCuboid(dt, ball, box)
         normalVec = computeCollisionNormalVector(ball, box)
-        changeVelocityVectorWithCollisionNormal(ball, normalVec)
+        changeVelocityVectorWithCollisionNormal(ball, normalVec, elasticity)
 
 
 
@@ -151,8 +151,7 @@ def computeCollisionNormalVector(ball, box):
 
     return normal
 
-def changeVelocityVectorWithCollisionNormal(ball, collisionNormal):
+def changeVelocityVectorWithCollisionNormal(ball, collisionNormal, elasticity):
     velComponentToNormal = ball.velocity.proj(collisionNormal)
     if ball.velocity.diff_angle(collisionNormal) < math.pi / 2:
-        ball.velocity = ball.velocity - 2*velComponentToNormal
-    arrow(pos=ball.sphere.pos, axis=collisionNormal, color=color.green)
+        ball.velocity = ball.velocity - velComponentToNormal - velComponentToNormal * elasticity

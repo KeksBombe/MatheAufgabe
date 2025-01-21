@@ -18,11 +18,10 @@ class Space():
         collisionHandlingSpheresWithSpheres(dt, elasticity, spherecollisions)
         self.collisionWithBorder(elasticity)
         sphereBoxCollisions = collidingSpheresWithBoxes(self.spheres, self.obstacles)
-        handleSphereBoxCollision(sphereBoxCollisions, dt)
+        handleSphereBoxCollision(sphereBoxCollisions, dt, elasticity)
         self.zeitschritt(dt)
 
     def collisionWithBorder(self, elasticity):
-        #TODO
         for ball in self.spheres:
             if not (-self.width / 2 + ball.sphere.radius) < ball.sphere.pos.x:
                 normalVektor = vector (1,0,0)
