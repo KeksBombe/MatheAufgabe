@@ -5,17 +5,19 @@ space:
       value: 0.2
       range: [0.1, 0.5]
   dimensions:
-    width:
-      value: 15
-      range: [ 1, 50 ]
-    height:
-      value: 15
-      range: [ 1, 50 ]
-    depth:
-      value: 15
-      range: [1, 50]
+    # width depth height
+    value: [20, 20, 20]
 
   obstacles:
     cuboid:
+      cuboid1:
+        position:
+          value: [4.5, 1, 1]
+        dimensions:
+          # width depth height
+          value: [3, 3, 3]
+        rotationAxis:
+          value: [1, 1, 1]
+        rotationInRad:
+          value: 1
 
-    spheres:

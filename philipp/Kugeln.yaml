@@ -3,10 +3,10 @@ spheres:
     radius:
       value: 2.0
       range: [0.1, 6]
-    position: [1.0, -2.0, 3.0]
+    position: [1.0, -2.0, 3.9]
     color: [1, 0, 0]
-    velocity: [10000.0, 3.0, 0.0]
-    mass: 100.0
+    velocity: [10.0, 5.0, 0.0]
+    mass: 10.0
   ball2:
     radius:
       value: 1.0
