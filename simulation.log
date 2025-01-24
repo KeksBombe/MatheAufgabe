@@ -1,1 +1,323 @@
 
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-134' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-192' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-242' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-265' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-279' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-286' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-310' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-103' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-157' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-163' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-172' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-178' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-190' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-238' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-254' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-258' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-262' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-266' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-271' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-304' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-428' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-517' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-554' coro=<WSserver.onMessage() done, defined at C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py:197> exception=AttributeError("'Simulation' object has no attribute 'pause'")>
+Traceback (most recent call last):
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\no_notebook.py", line 231, in onMessage
+    await loop.run_in_executor(None, GW.handle_msg, msg)
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\anaconda3\envs\MatheProjekt\Lib\site-packages\vpython\vpython.py", line 416, in handle_msg
+    obj._bind( obj )
+  File "C:\Users\phili\Philipp\Studium\Semester3\MATHE3\Projekt\GithubMatheProjekt\philipp\view.py", line 30, in handleEvent
+    self.Simulation.pause = not self.Simulation.pause
+                                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Simulation' object has no attribute 'pause'
