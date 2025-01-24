@@ -2,7 +2,17 @@ import itertools
 import yaml
 import numpy as np
 from multiprocessing import Pool, cpu_count
-from autoSim import simulation_durchfuehren, berechne_periodenabweichung
+from Simulation import simulation_durchfuehren
+
+#Diese Klasse nutzt die Simulation.py, um die Simulation der Beute-Räuber-Nahrungsdynamik durchzuführen.
+#Die Parameter werden aus einer YAML-Datei und variiert. Mit diesen Variationen wird die Simulation durchgeführt
+#und die Ergebnisse werden bewertet. Die beste Parameterkombination wird ausgegeben und kann optional gespeichert werden.
+
+# Funktion zum Lesen der Parameter aus einer YAML-Datei
+def lese_parameter(yaml_datei):
+    with open(yaml_datei, 'r') as datei:
+        parameter = yaml.safe_load(datei)
+    return parameter
 
 # Bewertung der Parameterkombination
 def bewerte(args):
@@ -15,8 +25,8 @@ def bewerte(args):
     # Parameterliste erstellen zur verbesserten Uebersicht
     param_list = list(params_dict.values())
 
-    # Simulation durchfuehren, dafür wird die Funktion simulation_durchfuehren aus autoSim.py verwendet
-    _, beute_werte, _, _ = simulation_durchfuehren(
+    # Simulation durchfuehren, dafür wird die Funktion simulation_durchfuehren aus Simulation.py verwendet
+    _, beute_werte, raeuber_werte, nahrungs_werte = simulation_durchfuehren(
         param_list,
         zeit_schritt,
         anzahl_schritte,
@@ -25,8 +35,21 @@ def bewerte(args):
         nahrungs_verfuegbarkeit
     )
 
-    fitness = berechne_periodenabweichung(beute_werte)
+    fitness_beute = berechne_periodenabweichung(beute_werte)
+    fitness_raeuber = berechne_periodenabweichung(raeuber_werte)
+    fitness_nahrung = berechne_periodenabweichung(nahrungs_werte)
+    fitness = (fitness_beute + fitness_raeuber + fitness_nahrung)/3
     return fitness, params_dict
+
+#Berechnet die Standardabweichung der Abstände zwischen Maxima einer Zahlenreihe,
+#um die Regelmäßigkeit periodischer Schwankungen zu beurteilen. Eine geringe
+#Standardabweichung deutet auf eine stabile Population hin, eine hohe auf ein Aussterben oder eine Ueberpopulation.
+def berechne_periodenabweichung(werte):
+    maxima = [i for i in range(1, len(werte) - 1) if werte[i - 1] < werte[i] > werte[i + 1]]
+    if len(maxima) < 2:
+        return float('inf')  # Keine periodischen Schwankungen
+    perioden = np.diff([maxima[i] for i in range(len(maxima))])
+    return np.std(perioden)  # Standardabweichung der Perioden
 
 
 def parameter_suche(parameter_datei, grid_dichte=5):
@@ -83,6 +106,26 @@ def parameter_suche(parameter_datei, grid_dichte=5):
     print("Beste Parameter:", beste_parameter)
     print("Beste Fitness:", beste_fitness)
 
+    native_beste_parameter = {key: float(value) for key, value in beste_parameter.items()}
+    output_data = {
+        **native_beste_parameter,  # Add best parameters
+        'zeit_schritt': float(zeit_schritt),
+        'anzahl_schritte': int(anzahl_schritte),
+        'beute_population': float(beute_population),
+        'raeuber_population': float(raeuber_population),
+        'nahrungs_verfuegbarkeit': float(nahrungs_verfuegbarkeit),
+    }
+
+    # Abfrage, ob die Parameter gespeichert werden sollen
+    speichern = input("Möchten Sie die besten Parameter in eine neue Datei speichern? (Y/N): ").strip().lower()
+    if speichern == 'y':
+        dateiname = input("Geben Sie einen Namen für die neue YAML-Datei ein: ").strip()
+        if not dateiname.endswith('.yaml'):
+            dateiname += '.yaml'
+        with open(dateiname, 'w') as neue_datei:
+            yaml.dump(output_data, neue_datei)
+        print(f"Die besten Parameter wurden in der Datei '{dateiname}' gespeichert.")
+
 
 if __name__ == "__main__":
-    parameter_suche('params.yaml', grid_density=10)
+    parameter_suche('params.yaml', grid_dichte=3)
