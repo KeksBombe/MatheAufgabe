@@ -12,9 +12,4 @@ pip install -r requirements.txt
 
 ## Verwendung
 
-Starten Sie die Anwendung mit:
-
-python philipp/KugelSim.py
-oder
-python marvin/JaegerBeuteNahrung.py, für die Visualisierung der Parameter
-python marvin/JaegerBeuteNahrung.py, für die optimierung der Parameter
+Um Probeme mit Dateipfaden zu vermeiden, entwender in die konkreten Teilordern (marvin/philipp) navigieren und in der Konsole starten, oder über den PyCharm "Run"-Button starten.
