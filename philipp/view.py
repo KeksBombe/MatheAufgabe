@@ -1,7 +1,7 @@
 import yaml
 from vpython import scene, slider, wtext, button, box, vector, color
 
-from philipp.Constants import INITIAL_SIM_RATE, INITIAL_ELASTICITY, MAX_SIM_RATE, MIN_SIM_RATE, RATE_STEP_SLIDER, \
+from Constants import INITIAL_SIM_RATE, INITIAL_ELASTICITY, MAX_SIM_RATE, MIN_SIM_RATE, RATE_STEP_SLIDER, \
     MAX_ELASTICITY, MIN_ELASTICITY, ELASTICITY_STEP_SLIDER
 
 OPACITY=0.1

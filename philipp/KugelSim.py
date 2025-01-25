@@ -1,8 +1,8 @@
 from vpython import rate
 
-from philipp.Constants import INITIAL_SIM_RATE, INITIAL_ELASTICITY, TIME_STEP
-from philipp.Space import Space
-from philipp.view import View
+from Constants import INITIAL_SIM_RATE, INITIAL_ELASTICITY, TIME_STEP
+from Space import Space
+from view import View
 
 
 class Simulation():

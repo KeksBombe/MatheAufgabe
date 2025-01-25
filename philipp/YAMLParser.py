@@ -1,7 +1,7 @@
 import logging
 import yaml
 from vpython import vector, box
-from philipp.Ball import Ball
+from Ball import Ball
 
 def createSpace(file):
     logger = logging.getLogger(__name__)

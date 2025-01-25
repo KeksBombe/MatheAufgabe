@@ -1,13 +1,13 @@
 from vpython import vector, mag, proj, box, color, dot, norm
 import math
-from philipp.CollisionDetection import collidingSpheresWithSpheres, collisionHandlingSpheresWithSpheres, \
+from CollisionDetection import collidingSpheresWithSpheres, collisionHandlingSpheresWithSpheres, \
     collidingSpheresWithBoxes, handleSphereBoxCollision
-from philipp.YAMLParser import createSpace, createSpheres
-from philipp.view import makeBordersVisual
+from YAMLParser import createSpace, createSpheres
+from view import makeBordersVisual
 
 
 class Space():
-    def __init__(self, file = "philipp/Kugeln.yaml", fileSpace = "philipp/Space.yaml"):
+    def __init__(self, file = "Kugeln.yaml", fileSpace = "Space.yaml"):
 
         self.width, self.height, self.depth, self.obstacles = createSpace(fileSpace)
         makeBordersVisual(fileSpace, self.height, self.width, self.depth)
